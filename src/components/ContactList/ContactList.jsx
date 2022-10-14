@@ -7,7 +7,7 @@ class ContactList extends Component {
     render () {
         return (
             <ul>
-                {this.props.newContacts.map(({id, name, number}) => (
+                {this.props.contacts.map(({id, name, number}) => (
                    <ContactItem key={id}>{name}: {number}</ContactItem>
                 ))}
             </ul>

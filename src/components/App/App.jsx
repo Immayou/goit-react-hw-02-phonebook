@@ -19,14 +19,22 @@ class App extends Component {
       contacts: [data, ...prevState.contacts]}))
   }
 
+  filterHandler = (value) => {
+    this.setState({filter: value})
+  }
+
+  getFiltredContacts = () => {
+    return this.state.contacts.map(({name}) => {name}).filter(el => {el.text.toLowerCase().includes(this.state.filter.toLowerCase())})
+  }
+
   render () {
   return (
     <Wrapper>
       <Title>Phonebook</Title>
       <ContactForm submitData={this.formSubmitHandler}/>
       <ContactsTitle>ContactsTitle</ContactsTitle>
-      <Filter/>
-      <ContactList newContacts={this.state.contacts}/>
+      <Filter value={this.state.value} filterInput={this.filterHandler}/>
+      <ContactList contacts={this.state.contacts}/>
     </Wrapper>
   );
     };
