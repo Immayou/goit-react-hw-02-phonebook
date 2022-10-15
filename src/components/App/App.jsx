@@ -30,8 +30,9 @@ class App extends Component {
   }
 
   getFiltredContacts = () => {
-    const normalizeFilter = this.state.filter.toLowerCase();
-    const visibleContacts = this.state.contacts.filter(({name}) => name.toLowerCase().includes(normalizeFilter))
+    const { filter, contacts} = this.state
+    const normalizeFilter = filter.toLowerCase();
+    const visibleContacts = contacts.filter(({name}) => name.toLowerCase().includes(normalizeFilter))
     return visibleContacts
   }
 

@@ -1,9 +1,15 @@
 import React, { Component } from "react";
+import PropTypes from 'prop-types'; 
 import shortid from "shortid";
 import { FilterWrapper, FilterLabel, InputFilterField } from './Filter.styled'
 
 
 class Filter extends Component {
+
+    static propTypes = {
+      value: PropTypes.string.isRequired,
+      filterInput: PropTypes.func.isRequired
+    }
 
     filterInputId = shortid.generate()
 

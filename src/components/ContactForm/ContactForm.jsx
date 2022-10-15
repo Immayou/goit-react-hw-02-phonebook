@@ -1,9 +1,13 @@
 import React, { Component } from "react";
+import PropTypes from 'prop-types'; 
 import shortid from "shortid";
 import { PhoneForm, NameLabel, InputNameField, NumberLabel, InputNumberField, FormButton } from './ContactForm.styled'
 
-
 class ContactForm extends Component {
+    static propTypes = {
+      submitData: PropTypes.func.isRequired,
+    }
+
     state = {
         name: '',
         number: ''
@@ -61,3 +65,4 @@ class ContactForm extends Component {
 };}
 
 export default ContactForm;
+

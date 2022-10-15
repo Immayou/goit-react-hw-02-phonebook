@@ -1,8 +1,20 @@
 import React, { Component } from "react";
+import PropTypes from 'prop-types'; 
 import { ListOfContacts, ContactItem, NameInfo, NumberInfo, DeleteButton } from './ContactList.styled'
 
 
 class ContactList extends Component {
+
+    static propTypes = {
+        contacts: PropTypes.arrayOf(
+            PropTypes.shape({
+                id: PropTypes.string,
+                name: PropTypes.string,
+                number: PropTypes.number,
+              }).isRequired,
+        ).isRequired,
+        onDeleteContact: PropTypes.func.isRequired
+    }
 
     render () {
         return (
