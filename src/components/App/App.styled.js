@@ -1,6 +1,5 @@
 
 import styled from '@emotion/styled'
-import WrapperImage from '../../images/wrapper.jpg'
 
 export const Wrapper = styled.div`
 width: 100vh;
@@ -9,7 +8,6 @@ margin: 0 auto;
 text-align: center;
 border-radius: 5px;
 padding: 20px;
-background-image: url(${WrapperImage})
 `
 
 export const Title = styled.h1`
