@@ -3,7 +3,7 @@ import styled from '@emotion/styled'
 export const FilterWrapper = styled.div`
 display: flex;
 flex-direction: column;
-width: 500px;
+width: 350px;
 margin-bottom: 20px;
 `
 
