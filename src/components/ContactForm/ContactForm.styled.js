@@ -4,7 +4,7 @@ import styled from '@emotion/styled'
 export const PhoneForm = styled.form`
 display: flex;
 flex-direction: column;
-width: 500px;
+width: 350px;
 margin-bottom: 20px;
 padding: 10px;
 border-radius: 5px;
@@ -24,11 +24,9 @@ line-height: 1.17;
 `
 
 export const InputNameField = styled.input`
-width: 60%;
 margin-bottom: 30px;
 `
 export const InputNumberField = styled.input`
-width: 60%;
 margin-bottom: 30px;
 `
 export const FormButton = styled.button`
