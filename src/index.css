@@ -30,3 +30,13 @@ ul, li {
   padding: 0;
   list-style: none;
 }
+
+input {
+  outline: none;
+}
+
+image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
