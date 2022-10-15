@@ -7,17 +7,13 @@ class Filter extends Component {
 
     filterInputId = shortid.generate()
 
-    onGetFilterValue = (e) => {
-      this.props.filterInput(e.currentTarget.value)
-    }
-
     render () {
         return (
             <FilterWrapper>
               <FilterLabel htmlFor={this.filterInputId}>Find contacts by name</FilterLabel>
               <InputFilterField
             id={this.filterInputId}
-            onChange={this.onGetFilterValue}
+            onChange={this.props.filterInput}
             type="text"
             value={this.props.value}
             name="filter"
