@@ -31,12 +31,16 @@ export const InputNumberField = styled.input`
 width: 60%;
 margin-bottom: 30px;
 `
-
 export const FormButton = styled.button`
 width: 100px;
-min-height: 30px;
+min-height: 25px;
 border-radius: 5px;
-background-color: lightblue
-`
+background-color: lightgray;
+transition: background-color 250ms cubic-bezier(0.075, 0.82, 0.165, 1), border 250ms cubic-bezier(0.075, 0.82, 0.165, 1);
 
+:hover, :focus {
+background-color: lightblue;
+border: 1px solid #000;
+}
+`
 

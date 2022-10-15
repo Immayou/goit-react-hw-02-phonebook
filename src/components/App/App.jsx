@@ -25,12 +25,18 @@ class App extends Component {
 
   getFiltredContacts = () => {
     const normalizeFilter = this.state.filter.toLowerCase();
-    const visibleContacts = this.state.contacts.map(({name}) => (name)).filter(el => el.text.toLowerCase().includes(normalizeFilter))
-    return visibleContacts;
+    const visibleContacts = this.state.contacts.map(({name}) => (name)).filter(el => el.toLowerCase().includes(normalizeFilter))
+    return visibleContacts
+  }
+
+  deleteContact = (idToDelete) => {
+    this.setState((prevState) => ({
+      contacts: prevState.contacts.filter(({id}) => id !== idToDelete)
+    }))
   }
 
   render () {
-    const visibleContacts = this.getFiltredContacts();
+    const contactsToRender = this.state.filter.length !== 0 ? this.getFiltredContacts() : this.state.contacts;
   return (
     
     <Wrapper>
@@ -38,7 +44,7 @@ class App extends Component {
       <ContactForm submitData={this.formSubmitHandler}/>
       <ContactsTitle>ContactsTitle</ContactsTitle>
       <Filter value={this.state.filter} filterInput={this.filterHandler}/>
-      <ContactList contacts={visibleContacts}/>
+      <ContactList contacts={contactsToRender} onDeleteContact={this.deleteContact}/>
     </Wrapper>
   );
     };
