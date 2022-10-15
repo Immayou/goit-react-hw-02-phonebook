@@ -5,7 +5,7 @@ export const PhoneForm = styled.form`
 display: flex;
 flex-direction: column;
 width: 350px;
-margin-bottom: 20px;
+margin: 0 auto 20px auto;
 padding: 10px;
 border-radius: 5px;
 border: 0.1px solid #000; 

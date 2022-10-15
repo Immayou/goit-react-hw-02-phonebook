@@ -1,9 +1,18 @@
 import styled from '@emotion/styled'
 
-export const ContactItem= styled.li`
+export const ListOfContacts = styled.ul`
+width: 350px;
+margin: 0 auto 20px auto;
+padding: 10px;
+border-radius: 5px;
+border: 0.1px solid #000; 
+box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+`
+
+export const ContactItem = styled.li`
 display: flex;
 align-items: center;
-padding-left: 30px;
+justify-content: space-between;
 font-size: 20px;
 font-weight:500;
 line-height: 1.17;

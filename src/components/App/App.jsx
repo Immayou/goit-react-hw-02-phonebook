@@ -14,7 +14,7 @@ class App extends Component {
     {id: 'id-1', name: 'Rosie Simpson', number: '459-12-56'},
     {id: 'id-2', name: 'Hermione Kline', number: '443-89-12'},
     {id: 'id-3', name: 'Eden Clements', number: '645-17-79'},
-    {id: 'id-4', name: 'Annie Copeland', number: '227-91-26'},],
+    {id: 'id-4', name: 'Annie Copeland', number: '227-91-26'}],
     filter: ''
   }
 
@@ -48,9 +48,9 @@ class App extends Component {
     <Wrapper>
       <Title>Phonebook</Title>
       <ContactForm submitData={this.formSubmitHandler}/>
-      <ContactsTitle>ContactsTitle</ContactsTitle>
+      <ContactsTitle>Contacts</ContactsTitle>
       <Filter value={filter} filterInput={this.filterHandler}/>
-      <ContactList contacts={contactsToRender} onDeleteContact={this.deleteContact}/>
+      {contacts.length !== 0 && <ContactList contacts={contactsToRender} onDeleteContact={this.deleteContact}/>}
     </Wrapper>
   );
     };

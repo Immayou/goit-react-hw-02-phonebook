@@ -4,7 +4,8 @@ export const FilterWrapper = styled.div`
 display: flex;
 flex-direction: column;
 width: 350px;
-margin-bottom: 20px;
+padding: 10px;
+margin: 0 auto 20px auto;
 `
 
 export const FilterLabel = styled.label`
@@ -14,5 +15,5 @@ line-height: 1.17;
 `
 
 export const InputFilterField = styled.input`
-width: 60%;
+min-height: 20px;
 `
