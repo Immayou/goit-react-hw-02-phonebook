@@ -15,8 +15,10 @@ class App extends Component {
   }
 
   formSubmitHandler = data => {
-    this.setState((prevState) => ({
-      contacts: [data, ...prevState.contacts]}))
+    const checkIfNewContactAlreadyExists = this.state.contacts.find(({name}) => (name.toLowerCase() === data.name.toLowerCase()))
+    checkIfNewContactAlreadyExists ?
+    alert(`${data.name} is already in contacts`)
+    : this.setState((prevState) => ({contacts: [data, ...prevState.contacts]}))
   }
 
   filterHandler = (e) => {
@@ -36,14 +38,14 @@ class App extends Component {
   }
 
   render () {
-    const contactsToRender = this.state.filter.length !== 0 ? this.getFiltredContacts() : this.state.contacts;
+    const { filter, contacts} = this.state
+    const contactsToRender = filter.length !== 0 ? this.getFiltredContacts() : contacts;
   return (
-    
     <Wrapper>
       <Title>Phonebook</Title>
       <ContactForm submitData={this.formSubmitHandler}/>
       <ContactsTitle>ContactsTitle</ContactsTitle>
-      <Filter value={this.state.filter} filterInput={this.filterHandler}/>
+      <Filter value={filter} filterInput={this.filterHandler}/>
       <ContactList contacts={contactsToRender} onDeleteContact={this.deleteContact}/>
     </Wrapper>
   );
