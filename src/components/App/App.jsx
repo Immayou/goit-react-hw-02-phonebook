@@ -30,7 +30,7 @@ class App extends Component {
   }
 
   getFiltredContacts = () => {
-    const { filter, contacts} = this.state
+    const { filter, contacts } = this.state
     const normalizeFilter = filter.toLowerCase();
     const visibleContacts = contacts.filter(({name}) => name.toLowerCase().includes(normalizeFilter))
     return visibleContacts
@@ -44,14 +44,16 @@ class App extends Component {
 
   render () {
     const { filter, contacts} = this.state
-    const contactsToRender = filter.length !== 0 ? this.getFiltredContacts() : contacts;
+    const contactsToRender = this.getFiltredContacts();
+    const isEmptyContacts = contacts.length !== 0;
+
   return (
     <Wrapper>
       <Title>Phonebook</Title>
       <ContactForm submitData={this.formSubmitHandler}/>
-      <ContactsTitle>Contacts</ContactsTitle>
-      <Filter value={filter} filterInput={this.filterHandler}/>
-      {contacts.length !== 0 && <ContactList contacts={contactsToRender} onDeleteContact={this.deleteContact}/>}
+      {isEmptyContacts && <ContactsTitle>Contacts</ContactsTitle>}
+      {isEmptyContacts && <Filter value={filter} filterInput={this.filterHandler}/>}
+      {isEmptyContacts && <ContactList contacts={contactsToRender} onDeleteContact={this.deleteContact}/>}
     </Wrapper>
   );
     };

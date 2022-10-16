@@ -10,7 +10,7 @@ class ContactList extends Component {
             PropTypes.shape({
                 id: PropTypes.string,
                 name: PropTypes.string,
-                number: PropTypes.number,
+                number: PropTypes.string,
               }).isRequired,
         ).isRequired,
         onDeleteContact: PropTypes.func.isRequired
